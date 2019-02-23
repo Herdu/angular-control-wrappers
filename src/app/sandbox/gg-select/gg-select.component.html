@@ -1,13 +1,23 @@
 <div class="gg-select">
-  <p class="gg-select__label">{{ name }}<span class="gg-select__required" *ngIf="required">*</span></p>
-  <select class="gg-select__select" [ngModel]="value"  (ngModelChange)="writeValue($event)" [disabled]="disabled" (focus)="propagateTouch()">
-    <option *ngIf="placeholder" [value]="null" disabled selected>{{placeholder}}</option>
-    <option *ngFor="let option of options" [value]="option.value">{{option.name}}</option>
+  <p class="gg-select__label">
+    {{ name }}<span class="gg-select__required" *ngIf="required">*</span>
+  </p>
+  <select
+    class="gg-select__select"
+    [ngModel]="value"
+    (ngModelChange)="writeValue($event)"
+    [disabled]="disabled"
+    (focus)="propagateTouch()"
+  >
+    <option *ngIf="placeholder" [value]="null" disabled selected>{{
+      placeholder
+    }}</option>
+    <option *ngFor="let option of options" [value]="option.value">{{
+      option.name
+    }}</option>
   </select>
 
   <div class="gg-select__errors">
-    {{ errors ? (errors | json): ''  }}
+    {{ errors ? (errors | json) : "" }}
   </div>
 </div>
-
-

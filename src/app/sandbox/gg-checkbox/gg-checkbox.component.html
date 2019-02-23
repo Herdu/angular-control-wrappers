@@ -1,0 +1,16 @@
+<div class="gg-checkbox">
+  <p class="gg-checkbox__label">
+    {{ name }} <span class="gg-checkbox__required" *ngIf="required">*</span>
+  </p>
+  <input
+    class="gg-checkbox__input"
+    type="checkbox"
+    [ngModel]="value"
+    (ngModelChange)="writeValue($event)"
+    [disabled]="disabled"
+    (focus)="propagateTouch()"
+  />
+  <div class="gg-checkbox__errors">
+    {{ errors ? (errors | json) : "" }}
+  </div>
+</div>

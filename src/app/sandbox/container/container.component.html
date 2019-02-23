@@ -1,34 +1,24 @@
 <form [formGroup]="formGroup">
-    <gg-input
+  <gg-input
     [name]="'Email'"
     [formControl]="formGroup.get('email')"
     [type]="'email'"
-    >
-    </gg-input>
+  >
+  </gg-input>
 
-    <gg-select
+  <gg-select
     [name]="'Płeć'"
     [placeholder]="'Wybierz'"
     [formControl]="formGroup.get('sex')"
-    [options]="sexOptions">
-    </gg-select>
+    [options]="sexOptions"
+  >
+  </gg-select>
+
+  <gg-checkbox [name]="'Regulamin'" [formControl]="formGroup.get('terms')">
+  </gg-checkbox>
 </form>
 
-
-
-
-
-
 <div>
-  <p> Form value: </p>
-  <pre>{{formGroup.value | json }}</pre>
-  <p>is touched: {{ formGroup.get('email').touched }} <button (click)="toggleTouchedHandler()">toggle touched</button></p>
-  <p>is disabled: {{ formGroup.get('email').disabled }} <button (click)="toggleDisabledHandler()">toggle disabled</button></p>
-
-  <p> Email errors: </p>
-  <pre>
-     {{ formGroup.get('email').errors | json }}
-  </pre>
-
-
+  <p>Form value:</p>
+  <pre>{{ formGroup.value | json }}</pre>
 </div>
