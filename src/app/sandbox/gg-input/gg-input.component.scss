@@ -1,0 +1,14 @@
+.gg-input {
+  border: solid purple 1px;
+  padding: 20px;
+  margin: 20px;
+
+  &__input {
+    width: 100%;
+  }
+
+  &__errors, &__required {
+    color: red;
+  }
+
+}

@@ -1,0 +1,9 @@
+<div class="gg-input">
+    <p class="gg-input__label">{{ name }} <span class="gg-input__required" *ngIf="required">*</span></p>
+    <input class="gg-input__input" [type]="type" [ngModel]="value"  (ngModelChange)="writeValue($event)" [disabled]="disabled" (focus)="propagateTouch()">
+    <div class="gg-input__errors">
+      {{ errors ? (errors | json): ''  }}
+    </div>
+</div>
+
+
